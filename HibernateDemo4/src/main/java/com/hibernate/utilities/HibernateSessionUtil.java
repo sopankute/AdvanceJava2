@@ -10,7 +10,6 @@ public class HibernateSessionUtil{
 	
 	private static Configuration config = null;
 	private static SessionFactory factory = null;
-	private static Session session = null;
 	
 	static {
 		try {
@@ -32,11 +31,10 @@ public class HibernateSessionUtil{
 	public static void closeSession(Session session) {
 		if(session!=null) {
 			session.close();
-			closeSessionFactory(factory);
 		}
 	}
 	
-	public static void closeSessionFactory(SessionFactory factory) {
+	public static void closeSessionFactory() {
 		if(factory!=null && !factory.isClosed()) {
 			factory.close();
 		}
