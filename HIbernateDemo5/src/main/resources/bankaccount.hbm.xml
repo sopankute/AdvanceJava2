@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  
+  <hibernate-mapping>
+  	<class name="com.hibernate.entities.BankAccount" table="bank_account">
+  		
+  		<id name="id" column="id"></id>
+  		<property name="holderName" column="ac_holder_name" type="string" length="16" not-null="true"></property>
+  		<property name="accountNo" column="ac_number" type="long" not-null="true"></property>
+  		<property name="balance" column="balance"  precision="2" not-null="true" ></property>
+  	</class>
+  
+  </hibernate-mapping>
